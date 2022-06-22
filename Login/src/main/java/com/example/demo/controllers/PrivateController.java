@@ -21,7 +21,7 @@ public class PrivateController {
 	@GetMapping("/index")
 	public String index(Authentication auth, HttpSession session) {
 		
-		String username = auth.getName();
+		String username = auth.name();
 		
 		if(session.getAttribute("usuario") == null) {
 			Usuario usuario = usuarioService.findByUsername(username);
